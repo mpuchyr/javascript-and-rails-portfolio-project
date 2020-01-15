@@ -104,17 +104,28 @@ let addButtonFunctionality = () => {
             } else {
                 this.style.color = "red"
             }
+            setTimeout(gameStart, 1500)
         })
     })
 }
 
+let gameStart = () => {
+    container.innerHTML = ""
+    randomQuote()
+    createQuoteHTML()
+    randomMovies()
+    shuffleRandomMovies()
+    addMovieButtons()
+    addButtonFunctionality()
+}
 
 fetchMovies()
 .then(fetchQuotes)
-.then(randomQuote)
-.then(createQuoteHTML)
-.then(randomMovies)
-.then(shuffleRandomMovies)
-.then(addMovieButtons)
-.then(addButtonFunctionality)
+.then(gameStart)
+// .then(randomQuote)
+// .then(createQuoteHTML)
+// .then(randomMovies)
+// .then(shuffleRandomMovies)
+// .then(addMovieButtons)
+// .then(addButtonFunctionality)
 
