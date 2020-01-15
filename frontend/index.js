@@ -60,9 +60,12 @@ let fetchMovies = () => {
     })
 }
 
-let randomMovies = (movie) => {
+let randomMovies = () => {
     moviesToGuess = []
-    moviesToGuess.push(movie)
+    let firstMovie = movies.find(movie => { 
+        return movie.id === quote.movieId
+    })
+    moviesToGuess.push(firstMovie)
     while (moviesToGuess.length < 3) {
         let num = Math.floor(Math.random() * movies.length)
         let randomMovie = movies[num]
