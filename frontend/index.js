@@ -40,6 +40,8 @@ let fetchQuotes = () => {
     })
 }
 
+
+
 let randomQuote = () => {
     let num = Math.floor(Math.random() * quotes.length)
     quote = quotes[num]
@@ -50,7 +52,28 @@ let createQuoteHTML = () => {
     container.innerHTML += quoteHTML
 } 
 
-
+let addMovieQuote = () => {
+    const newQuoteForm = document.querySelector(".add-movie-quote")
+    newQuoteForm.addEventListener("submit", function(e) {
+        e.preventDefault()
+        movies = []
+        quotes = []
+        let quoteInput = this.querySelector("#new-movie-quote").value
+        let movieInput = this.querySelector("#new-movie").value
+        fetch(`${QUOTES_URL}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                quote: `${quoteInput}`,
+                movie: `${movieInput}`
+            })
+        }).then(res => res.json())
+        .then(fetchQuotes)
+        .then(fetchMovies)
+    })
+}
 
 // Movies
 let fetchMovies = () => {
@@ -130,6 +153,7 @@ let gameStart = () => {
 fetchMovies()
 .then(fetchQuotes)
 .then(gameStart)
+.then(addMovieQuote)
 // .then(randomQuote)
 // .then(createQuoteHTML)
 // .then(randomMovies)
