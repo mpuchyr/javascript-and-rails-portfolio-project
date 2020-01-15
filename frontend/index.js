@@ -6,6 +6,8 @@ let movies = []
 let quotes = []
 let quote
 
+const container = document.querySelector(".container")
+
 
 class Movie {
     constructor(name, id) {
@@ -37,6 +39,15 @@ let randomQuote = () => {
     let num = Math.floor(Math.random() * quotes.length)
     quote = quotes[num]
 }
+
+let appendQuote = () => {
+    let quoteHTML = `<h2>${quote.quote}</h2>`
+    container.innerHTML = quoteHTML
+} 
+
+fetchQuotes()
+.then(randomQuote)
+.then(appendQuote)
 
 // Movies
 let fetchMovies = () => {
