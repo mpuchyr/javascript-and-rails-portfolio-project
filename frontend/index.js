@@ -75,5 +75,13 @@ let randomMovies = () => {
     }
 }
 
+let addMovieButtons = () => {
+    moviesToGuess.forEach(movie => {
+        container.innerHTML += `
+            <button id="${movie.id}">${movie.name}</button>
+        `
+    })
+}
+
 
 
