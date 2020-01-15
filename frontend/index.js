@@ -23,8 +23,8 @@ class Quote {
 let fetchQuotes = () => {
     return fetch(`${QUOTES_URL}`)
     .then(res => res.json())
-    .then(quotes => {
-        quotes.forEach(quote => {
+    .then(movieQuotes => {
+        movieQuotes.forEach(quote => {
             let newQuote = new Quote(quote.quote, quote.movie_id)
             quotes.push(newQuote)
         })
