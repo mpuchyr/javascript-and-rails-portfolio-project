@@ -29,10 +29,6 @@ class Quote {
 }
 
 
-
-// Movies
-
-
 let gameStart = () => {
     container.innerHTML = ""
     randomQuote()
@@ -43,10 +39,13 @@ let gameStart = () => {
     addButtonFunctionality()
 }
 
-fetchMovies()
-.then(fetchQuotes)
-.then(gameStart)
-.then(addMovieQuote)
+window.addEventListener('DOMContentLoaded', (event) => {
+    fetchMovies()
+    .then(fetchQuotes)
+    .then(gameStart)
+    .then(addMovieQuote)
+})
+
 // .then(randomQuote)
 // .then(createQuoteHTML)
 // .then(randomMovies)
