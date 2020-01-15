@@ -4,6 +4,7 @@ const QUOTES_URL = `${BASE_URL}/quotes`
 
 let movies = []
 let quotes = []
+let quote
 
 
 class Movie {
@@ -32,6 +33,11 @@ let fetchQuotes = () => {
     })
 }
 
+let randomQuote = () => {
+    let num = Math.floor(Math.random() * quotes.length)
+    quote = quotes[num]
+}
+
 // Movies
 let fetchMovies = () => {
     return fetch(`${MOVIES_URL}`)
@@ -43,3 +49,4 @@ let fetchMovies = () => {
         })
     })
 }
+
