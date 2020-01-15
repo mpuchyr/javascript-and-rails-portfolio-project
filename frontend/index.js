@@ -7,8 +7,9 @@ let quotes = []
 
 
 class Movie {
-    constructor(name) {
+    constructor(name, id) {
         this.name = name
+        this.id = id
     }
 }
 
@@ -27,6 +28,18 @@ let fetchQuotes = () => {
         movieQuotes.forEach(quote => {
             let newQuote = new Quote(quote.quote, quote.movie_id)
             quotes.push(newQuote)
+        })
+    })
+}
+
+// Movies
+let fetchMovies = () => {
+    return fetch(`${MOVIES_URL}`)
+    .then(res => res.json())
+    .then(allMovies => {
+        allMovies.forEach(movie => {
+            let newMovie = new Movie(movie.name, movie.id)
+            movies.push(newMovie)
         })
     })
 }
