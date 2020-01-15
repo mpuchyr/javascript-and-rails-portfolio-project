@@ -75,6 +75,15 @@ let randomMovies = () => {
     }
 }
 
+let shuffleRandomMovies = () => {
+    for (let i = moviesToGuess.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i)
+        const temp = moviesToGuess[i]
+        moviesToGuess[i] = moviesToGuess[j]
+        moviesToGuess[j] = temp
+    }
+}
+
 let addMovieButtons = () => {
     moviesToGuess.forEach(movie => {
         container.innerHTML += `
@@ -102,5 +111,7 @@ fetchMovies()
 .then(randomQuote)
 .then(createQuoteHTML)
 .then(randomMovies)
+.then(shuffleRandomMovies)
 .then(addMovieButtons)
+.then(addButtonFunctionality)
 
