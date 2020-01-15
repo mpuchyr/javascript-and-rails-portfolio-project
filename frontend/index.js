@@ -6,8 +6,12 @@ let movies = []
 let moviesToGuess = []
 let quotes = []
 let quote
+let score = 0
 
 const container = document.querySelector(".container")
+const scoreContainer = document.querySelector(".score")
+
+scoreContainer.innerText = score
 
 
 class Movie {
@@ -100,10 +104,13 @@ let addButtonFunctionality = () => {
         button.addEventListener("click", function () {
             if (parseInt(this.id) === quote.movieId) {
                 this.style.color = "green"
+                score += 1
                 console.log("Correct!")
             } else {
                 this.style.color = "red"
+                score -= 1
             }
+            scoreContainer.innerText = score
             setTimeout(gameStart, 1500)
         })
     })
