@@ -31,12 +31,16 @@ class Quote {
 
 let gameStart = () => {
     container.innerHTML = ""
-    randomQuote()
-    createQuoteHTML()
-    randomMovies()
-    shuffleRandomMovies()
-    addMovieButtons()
-    addButtonFunctionality()
+    if (quotes.length > 0) {
+        randomQuote()
+        createQuoteHTML()
+        randomMovies()
+        shuffleRandomMovies()
+        addMovieButtons()
+        addButtonFunctionality()
+    } else {
+        container.innerHTML = `<h2>GAME OVER<h2>`
+    }
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -46,10 +50,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
     .then(addMovieQuote)
 })
 
-// .then(randomQuote)
-// .then(createQuoteHTML)
-// .then(randomMovies)
-// .then(shuffleRandomMovies)
-// .then(addMovieButtons)
-// .then(addButtonFunctionality)
+
 
