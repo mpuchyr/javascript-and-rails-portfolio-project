@@ -99,7 +99,10 @@ let addButtonFunctionality = () => {
     buttons.forEach(button => {
         button.addEventListener("click", function () {
             if (parseInt(this.id) === quote.movieId) {
+                this.style.color = "green"
                 console.log("Correct!")
+            } else {
+                this.style.color = "red"
             }
         })
     })
