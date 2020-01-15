@@ -3,6 +3,7 @@ const MOVIES_URL = `${BASE_URL}/movies`
 const QUOTES_URL = `${BASE_URL}/quotes`
 
 let movies = []
+let moviesToGuess = []
 let quotes = []
 let quote
 
@@ -40,14 +41,12 @@ let randomQuote = () => {
     quote = quotes[num]
 }
 
-let appendQuote = () => {
+let createQuoteHTML = () => {
     let quoteHTML = `<h2>${quote.quote}</h2>`
-    container.innerHTML = quoteHTML
+    container.innerHTML += quoteHTML
 } 
 
-fetchQuotes()
-.then(randomQuote)
-.then(appendQuote)
+
 
 // Movies
 let fetchMovies = () => {
@@ -60,4 +59,18 @@ let fetchMovies = () => {
         })
     })
 }
+
+let randomMovies = (movie) => {
+    moviesToGuess = []
+    moviesToGuess.push(movie)
+    while (moviesToGuess.length < 3) {
+        let num = Math.floor(Math.random() * movies.length)
+        let randomMovie = movies[num]
+        if (!moviesToGuess.includes(randomMovie)) {
+            moviesToGuess.push(randomMovie)
+        }
+    }
+}
+
+
 
