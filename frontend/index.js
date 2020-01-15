@@ -70,8 +70,7 @@ let addMovieQuote = () => {
                 movie: `${movieInput}`
             })
         }).then(res => res.json())
-        .then(fetchQuotes)
-        .then(fetchMovies)
+        .then(location.reload())
     })
 }
 
