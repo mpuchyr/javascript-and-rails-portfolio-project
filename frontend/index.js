@@ -78,7 +78,7 @@ let randomMovies = () => {
 let addMovieButtons = () => {
     moviesToGuess.forEach(movie => {
         container.innerHTML += `
-            <button id="${movie.id}">${movie.name}</button>
+            <button class="guess-button" id="${movie.id}">${movie.name}</button>
         `
     })
 }
@@ -86,7 +86,7 @@ let addMovieButtons = () => {
 // Game Functionality
 
 let addButtonFunctionality = () => {
-    let buttons = document.querySelectorAll("button")
+    let buttons = document.querySelectorAll(".guess-button")
     buttons.forEach(button => {
         button.addEventListener("click", function () {
             if (parseInt(this.id) === quote.movieId) {
