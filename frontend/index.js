@@ -110,6 +110,7 @@ let addButtonFunctionality = () => {
                 this.style.color = "red"
                 score -= 1
             }
+            quotes.splice( quotes.indexOf(quote), 1)
             scoreContainer.innerText = score
             setTimeout(gameStart, 1500)
         })
