@@ -9,9 +9,9 @@ let quote
 let score = 0
 
 const container = document.querySelector(".container")
-const scoreContainer = document.querySelector(".score")
+const scoreSpan = document.querySelector(".score")
 
-scoreContainer.innerText = score
+scoreSpan.innerText = score
 
 
 class Movie {
@@ -133,7 +133,7 @@ let addButtonFunctionality = () => {
                 score -= 1
             }
             quotes.splice( quotes.indexOf(quote), 1)
-            scoreContainer.innerText = score
+            scoreSpan.innerText = score
             setTimeout(gameStart, 1500)
         })
     })
