@@ -83,5 +83,24 @@ let addMovieButtons = () => {
     })
 }
 
+// Game Functionality
 
+let addButtonFunctionality = () => {
+    let buttons = document.querySelectorAll("button")
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            if (parseInt(this.id) === quote.movieId) {
+                console.log("Correct!")
+            }
+        })
+    })
+}
+
+
+fetchMovies()
+.then(fetchQuotes)
+.then(randomQuote)
+.then(createQuoteHTML)
+.then(randomMovies)
+.then(addMovieButtons)
 
