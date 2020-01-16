@@ -4,6 +4,8 @@ body {
 
 .container {
     color: white;
+    width: 66%;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
