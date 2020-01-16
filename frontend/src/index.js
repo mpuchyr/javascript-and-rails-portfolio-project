@@ -57,11 +57,6 @@ resetBtn.addEventListener('click', resetGame)
 
 window.addEventListener('DOMContentLoaded', (event) => {
     resetGame()
-    // fetchMovies()
-    // .then(fetchQuotes)
-    // .then(gameStart)
-    // .then(addMovieQuote)
-
 })
 
 
