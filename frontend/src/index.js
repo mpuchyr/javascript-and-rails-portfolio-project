@@ -8,7 +8,7 @@ let quotes = []
 let quote
 let score = 0
 
-const container = document.querySelector(".container")
+const container = document.querySelector(".quote-container")
 const scoreSpan = document.querySelector(".score")
 const resetBtn = document.querySelector(".reset")
 

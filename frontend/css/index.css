@@ -1,0 +1,9 @@
+body {
+    background-image: url("../imgs/camera-background.jpg")
+}
+
+.container {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+

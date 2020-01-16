@@ -4,42 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Guess the Movie!</h1>
-    <div class="container"></div>
-    <div class="score-container">
-        <h3>Your Score</h3>
-        <span class="score"></span>
-    </div>
-    <form class="add-movie-quote">
-        <h3>Add a Quote</h3>
-        <h5>(This will reset the game)</h5>
-        <input
-            type="text"
-            name="quote"
-            value=""
-            placeholder="Movie Quote"
-            id="new-movie-quote"
-        >
-        <input
-            type="text"
-            name="movie"
-            value=""
-            placeholder="Movie"
-            id="new-movie"
-        >
-        <input
-            type="submit"
-            name="submit"
-            value="Add Movie Quote"
-            class="submit"
-        >
-    </form>
     
-    <div class="reset-container">
-        <button class="reset">Reset Game</button>
+    <div class="container">
+        <h1>Guess the Movie!</h1>
+        <div class="quote-container"></div>
+        <div class="score-container">
+            <h3>Your Score</h3>
+            <span class="score"></span>
+        </div>
+        <form class="add-movie-quote">
+            <h3>Add a Quote</h3>
+            <h5>(This will reset the game)</h5>
+            <input
+                type="text"
+                name="quote"
+                value=""
+                placeholder="Movie Quote"
+                id="new-movie-quote"
+            >
+            <input
+                type="text"
+                name="movie"
+                value=""
+                placeholder="Movie"
+                id="new-movie"
+            >
+            <input
+                type="submit"
+                name="submit"
+                value="Add Movie Quote"
+                class="submit"
+            >
+        </form>
+
+        <div class="reset-container">
+            <button class="reset">Reset Game</button>
+        </div>
     </div>
 
     <script src="src/quotes.js"></script>
