@@ -59,7 +59,7 @@ let addButtonFunctionality = () => {
             }
             quotes.splice( quotes.indexOf(quote), 1)
             scoreSpan.innerText = score
-            setTimeout(gameStart, 1500)
+            setTimeout(gameStart, 500)
         })
     })
 }
