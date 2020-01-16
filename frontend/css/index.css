@@ -6,6 +6,16 @@ body {
     color: white;
     width: 66%;
     margin: 0 auto;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
+    padding: 25px;
 }
 
+.quote-container {
+    border: 5px solid white;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    width: 66%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
