@@ -33,7 +33,7 @@ Quote.create(quote: 'Say "hello" to my little friend!', movie_id: 8)
 Movie.create(name: "Ghostbusters")
 Quote.create(quote: "There is no Dana, only Zuul.", movie_id: 9)
 Quote.create(quote: "That's a big Twinkie.", movie_id: 9)
-Quote.create(quote: "Cats and dogs living together. Mass hysteria!", movie_id: 9)
+Quote.create(quote: "Dogs and cats living together. Mass hysteria!", movie_id: 9)
 Quote.create(quote: "When someone asks you if you're a god, you say yes!", movie_id: 9)
 
 Movie.create(name: "Star Wars: A New Hope")

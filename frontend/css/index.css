@@ -2,6 +2,10 @@ body {
     background-image: url("../imgs/camera-background.jpg")
 }
 
+h1 {
+    font-s
+}
+
 button {
     color: white;
     background-color: black;
@@ -22,6 +26,7 @@ button {
 }
 
 .quote-container {
+    background-color: rgba(0, 0, 0, 0.5);
     border: 5px solid white;
     padding-top: 0px;
     padding-bottom: 20px;
@@ -31,6 +36,7 @@ button {
 }
 
 .add-movie-quote {
+    background-color: rgba(0, 0, 0, 0.5);
     border: 5px solid white;
     padding-top: 0px;
     padding-bottom: 20px;
