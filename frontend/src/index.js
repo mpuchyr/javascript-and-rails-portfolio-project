@@ -10,6 +10,7 @@ let score = 0
 
 const container = document.querySelector(".container")
 const scoreSpan = document.querySelector(".score")
+const resetBtn = document.querySelector(".reset")
 
 scoreSpan.innerText = score
 
@@ -43,11 +44,24 @@ let gameStart = () => {
     }
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+let resetGame = () => {
+    movies = []
+    quotes = []
     fetchMovies()
     .then(fetchQuotes)
     .then(gameStart)
     .then(addMovieQuote)
+}
+
+resetBtn.addEventListener('click', resetGame)
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    resetGame()
+    // fetchMovies()
+    // .then(fetchQuotes)
+    // .then(gameStart)
+    // .then(addMovieQuote)
+
 })
 
 
