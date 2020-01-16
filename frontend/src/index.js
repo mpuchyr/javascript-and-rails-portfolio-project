@@ -30,7 +30,7 @@ class Quote {
 }
 
 
-let gameStart = () => {
+const gameStart = () => {
     container.innerHTML = ""
     if (quotes.length > 0) {
         randomQuote()
@@ -44,7 +44,7 @@ let gameStart = () => {
     }
 }
 
-let resetGame = () => {
+const resetGame = () => {
     movies = []
     quotes = []
     fetchMovies()

@@ -1,4 +1,4 @@
-let fetchMovies = () => {
+const fetchMovies = () => {
     return fetch(`${MOVIES_URL}`)
     .then(res => res.json())
     .then(allMovies => {
@@ -9,7 +9,7 @@ let fetchMovies = () => {
     })
 }
 
-let randomMovies = () => {
+const randomMovies = () => {
     moviesToGuess = []
     let firstMovie = movies.find(movie => { 
         return movie.id === quote.movieId
@@ -24,7 +24,7 @@ let randomMovies = () => {
     }
 }
 
-let shuffleRandomMovies = () => {
+const shuffleRandomMovies = () => {
     for (let i = moviesToGuess.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * i)
         const temp = moviesToGuess[i]
@@ -33,7 +33,7 @@ let shuffleRandomMovies = () => {
     }
 }
 
-let addMovieButtons = () => {
+const addMovieButtons = () => {
     moviesToGuess.forEach(movie => {
         container.innerHTML += `
             <button class="guess-button" id="${movie.id}">${movie.name}</button><br>
@@ -42,7 +42,7 @@ let addMovieButtons = () => {
 }
 
 
-let addButtonFunctionality = () => {
+const addButtonFunctionality = () => {
     let buttons = document.querySelectorAll(".guess-button")
     buttons.forEach(button => {
         button.addEventListener("click", function () {

@@ -1,4 +1,4 @@
-let fetchQuotes = () => {
+const fetchQuotes = () => {
     return fetch(`${QUOTES_URL}`)
     .then(res => res.json())
     .then(movieQuotes => {
@@ -11,17 +11,17 @@ let fetchQuotes = () => {
 
 
 
-let randomQuote = () => {
+const randomQuote = () => {
     let num = Math.floor(Math.random() * quotes.length)
     quote = quotes[num]
 }
 
-let createQuoteHTML = () => {
+const createQuoteHTML = () => {
     let quoteHTML = `<h2>${quote.quote}</h2>`
     container.innerHTML += quoteHTML
 } 
 
-let addMovieQuote = () => {
+const addMovieQuote = () => {
     const newQuoteForm = document.querySelector(".add-movie-quote")
     newQuoteForm.addEventListener("submit", function(e) {
         e.preventDefault()
