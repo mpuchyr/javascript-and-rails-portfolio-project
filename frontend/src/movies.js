@@ -36,7 +36,7 @@ let shuffleRandomMovies = () => {
 let addMovieButtons = () => {
     moviesToGuess.forEach(movie => {
         container.innerHTML += `
-            <button class="guess-button" id="${movie.id}">${movie.name}</button>
+            <button class="guess-button" id="${movie.id}">${movie.name}</button><br>
         `
     })
 }
@@ -49,10 +49,12 @@ let addButtonFunctionality = () => {
         button.addEventListener("click", function () {
             if (parseInt(this.id) === quote.movieId) {
                 this.style.color = "green"
+                this.style.borderColor = "green"
                 score += 1
                 console.log("Correct!")
             } else {
                 this.style.color = "red"
+                this.style.borderColor = "red"
                 score -= 1
             }
             quotes.splice( quotes.indexOf(quote), 1)
