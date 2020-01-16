@@ -41,7 +41,6 @@ let addMovieButtons = () => {
     })
 }
 
-// Game Functionality
 
 let addButtonFunctionality = () => {
     let buttons = document.querySelectorAll(".guess-button")
