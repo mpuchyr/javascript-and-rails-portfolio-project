@@ -11,6 +11,7 @@ let score = 0
 const container = document.querySelector(".quote-container")
 const scoreSpan = document.querySelector(".score")
 const resetBtn = document.querySelector(".reset")
+const loader = document.querySelector(".loader")
 
 scoreSpan.innerText = score
 
@@ -44,16 +45,27 @@ const gameStart = () => {
     }
 }
 
+const addLoader = () => {
+    loader.style.display = "block"
+}
+
+const removeLoader = () => {
+    loader.style.display = "none"
+}
+
 const resetGame = () => {
     movies = []
     quotes = []
 
+    addLoader()
     fetchMovies()
     .then(fetchQuotes)
+    .then(removeLoader)
     .then(gameStart)
     .then(addMovieQuote)
     .catch(err => {
-        container.innerHTML = `Sorry. Something went wrong. <br> ${err.message}`
+        container.innerHTML = `Sorry. Something went wrong. <br> Please try again later.`
+        console.log(err.message)
     })
 
 }
