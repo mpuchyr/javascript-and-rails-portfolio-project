@@ -47,10 +47,15 @@ const gameStart = () => {
 const resetGame = () => {
     movies = []
     quotes = []
+
     fetchMovies()
     .then(fetchQuotes)
     .then(gameStart)
     .then(addMovieQuote)
+    .catch(err => {
+        container.innerHTML = `Sorry. Something went wrong. <br> ${err.message}`
+    })
+
 }
 
 resetBtn.addEventListener('click', resetGame)
