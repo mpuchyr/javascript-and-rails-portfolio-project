@@ -56,6 +56,8 @@ const removeLoader = () => {
 const resetGame = () => {
     movies = []
     quotes = []
+    score = 0
+    scoreSpan.innerText = score
 
     addLoader()
     fetchMovies()
@@ -70,10 +72,11 @@ const resetGame = () => {
 
 }
 
-resetBtn.addEventListener('click', resetGame)
+
 
 window.addEventListener('DOMContentLoaded', (event) => {
     resetGame()
+    resetBtn.addEventListener('click', resetGame)
 })
 
 
