@@ -41,7 +41,10 @@ const gameStart = () => {
         addMovieButtons()
         addButtonFunctionality()
     } else {
-        container.innerHTML = `<h2>GAME OVER<h2>`
+        container.innerHTML = `<h2>GAME OVER<h2><br>`
+        container.innerHTML += `<button id="replay">Play Again?</button>`
+        let replayBtn = container.querySelector("#replay")
+        replayBtn.addEventListener("click", resetGame)
     }
 }
 
