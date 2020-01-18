@@ -39,6 +39,6 @@ const addMovieQuote = () => {
                 movie: `${movieInput}`
             })
         }).then(res => res.json())
-        .then(location.reload())
+        .then(location.reload(forceGet = true))
     })
 }
