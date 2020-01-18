@@ -55,6 +55,7 @@ const addButtonFunctionality = () => {
                 this.style.color = "red"
                 this.style.borderColor = "red"
                 score -= 1
+                strikes += 1
             }
             quotes.splice( quotes.indexOf(quote), 1)
             scoreSpan.innerText = score

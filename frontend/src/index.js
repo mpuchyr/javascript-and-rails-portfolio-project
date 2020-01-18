@@ -7,6 +7,7 @@ let moviesToGuess = []
 let quotes = []
 let quote
 let score = 0
+let strikes = 0
 
 const container = document.querySelector(".quote-container")
 const scoreSpan = document.querySelector(".score")
@@ -33,7 +34,7 @@ class Quote {
 
 const gameStart = () => {
     container.innerHTML = ""
-    if (quotes.length > 0) {
+    if (quotes.length > 0 && strikes < 3) {
         randomQuote()
         createQuoteHTML()
         randomMovies()
@@ -60,6 +61,7 @@ const resetGame = () => {
     movies = []
     quotes = []
     score = 0
+    strikes = 0
     scoreSpan.innerText = score
 
     addLoader()
