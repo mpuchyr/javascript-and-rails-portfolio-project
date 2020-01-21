@@ -39,6 +39,7 @@ const gameStart = () => {
         createQuoteHTML()
         randomMovies()
         shuffleRandomMovies()
+        sortMovies()
         addMovieButtons()
         addButtonFunctionality()
     } else {
@@ -83,6 +84,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     resetGame()
     resetBtn.addEventListener('click', resetGame)
 })
+
 
 
 

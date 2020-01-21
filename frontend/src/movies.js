@@ -63,3 +63,31 @@ const addButtonFunctionality = () => {
         })
     })
 }
+
+const sortMovies = () => {
+    moviesToGuess = moviesToGuess.sort(function(a, b) {
+        let c = a.name
+        let d = b.name
+        
+        if (a.name.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+            let aName = a.name.split(" ")
+            aName.splice(0, 1)
+            c = aName.join(" ")
+        }
+
+        if (b.name.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+            let bName = b.name.split(" ")
+            bName.splice(0, 1)
+            d = bName.join(" ")
+        }
+        
+
+        if (c.toLowerCase() > d.toLowerCase()) {
+            return 1
+        } else if (c.toLowerCase() < d.toLowerCase()) {
+            return -1
+        } else {
+            return 0
+        }
+    })
+}
